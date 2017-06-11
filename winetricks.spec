@@ -15,7 +15,8 @@ ExclusiveArch:  %{ix86} x86_64 %{arm} aarch64
 # - explicitly not ppc64* to hopefully not confuse koschei
 ExcludeArch:    ppc64 ppc64le
 
-BuildRequires:  wine-common
+# Error: nothing provides libLLVM-4.0.so needed by mesa-libOSMesa-17.1.1-2.fc26.i686
+#BuildRequires:  wine-common
 BuildRequires:  desktop-file-utils
 
 # runtime dependencies
@@ -72,6 +73,7 @@ fi
 %changelog
 * Sat Jun 10 2017 Builder <projects.rg@smart.ms> - 20170517-1
 - new version
+- drop 'BR: wine-common' as mesa dependencies seem to be instable
 
 * Tue Mar 28 2017 Raphael Groner <projects.rg@smart.ms> - 20170326-1
 - new version
