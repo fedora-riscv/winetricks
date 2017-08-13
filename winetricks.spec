@@ -1,11 +1,19 @@
+%global snapshot 1
+%global commit0  43314ed7895396bfd625824d88b5e19c25f46cac
+
 Name:           winetricks
-Version:        20170517
+Version:        20170731
 Release:        1%{?dist}
+
 Summary:        Work around common problems in Wine
 
 License:        LGPLv2+
 URL:            https://github.com/Winetricks/%{name}
+%if 0%{?snapshot}
+Source0:        %{url}/archive/%{commit0}.tar.gz#/%{name}-%{commit0}.tar.gz
+%else
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+%endif
 
 BuildArch:      noarch
 
@@ -33,11 +41,18 @@ or tweak various Wine settings individually.
 
 
 %prep
+%if 0%{?snapshot}
+%setup -qn%{name}-%{commit0}
+%else
 %setup -q
+%endif
+
 sed -i -e s:steam:: -e s:flash:: tests/*
+
 
 %build
 # not needed
+
 
 %install
 %make_install
@@ -68,10 +83,21 @@ fi
 %{_mandir}/man1/%{name}.1*
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/appdata/%{name}.appdata.xml
 
 
 %changelog
-* Sat Jun 10 2017 Builder <projects.rg@smart.ms> - 20170517-1
+* Sun Aug 13 2017 Raphael Groner <projects.rg@smart.ms> - 20170731-1
+- new snapshot
+- add appdata
+
+* Sun Aug 13 2017 Raphael Groner <projects.rg@smart.ms> - 20170614-1
+- new version
+
+* Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 20170517-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
+* Sat Jun 10 2017 Raphael Groner <projects.rg@smart.ms> - 20170517-1
 - new version
 - drop 'BR: wine-common' as mesa dependencies seem to be instable
 
