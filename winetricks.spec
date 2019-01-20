@@ -3,8 +3,8 @@
 %global commit0  43314ed7895396bfd625824d88b5e19c25f46cac
 
 Name:           winetricks
-Version:        20180603
-Release:        4%{?dist}
+Version:        20181203
+Release:        1%{?dist}
 
 Summary:        Work around common problems in Wine
 
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Sun Jan 20 2019 Ernestas Kulik <ekulik@redhat.com> - 20181203-1
+- Update to 20181203
+
 * Sun Jan 20 2019 Ernestas Kulik <ekulik@redhat.com> - 20180603-4
 - Add dependency on zenity or kdialog for GUI
 
