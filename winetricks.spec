@@ -4,7 +4,7 @@
 
 Name:           winetricks
 Version:        20180603
-Release:        3%{?dist}
+Release:        4%{?dist}
 
 Summary:        Work around common problems in Wine
 
@@ -27,10 +27,10 @@ ExcludeArch:    ppc64 ppc64le
 BuildRequires:  wine-common
 BuildRequires:  desktop-file-utils
 
-# runtime dependencies
 Requires:       wine-common
 Requires:       cabextract gzip unzip wget which
 Requires:       hicolor-icon-theme
+Requires:       (kdialog if kdialog else zenity)
 
 %description
 Winetricks is an easy way to work around common problems in Wine.
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Sun Jan 20 2019 Ernestas Kulik <ekulik@redhat.com> - 20180603-4
+- Add dependency on zenity or kdialog for GUI
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 20180603-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
