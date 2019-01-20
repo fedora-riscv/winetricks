@@ -4,7 +4,7 @@
 
 Name:           winetricks
 Version:        20181203
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 Summary:        Work around common problems in Wine
 
@@ -66,13 +66,17 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %doc README.md
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
-%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/bash-completion/completions/%{name}
+%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_datadir}/metainfo/%{name}.appdata.xml
-%exclude %{_datadir}/appdata/%{name}.appdata.xml
 
 
 %changelog
+* Sun Jan 20 2019 Ernestas Kulik <ekulik@redhat.com> - 20181203-2
+- Drop old path appdata exclude
+- Add bash completions
+
 * Sun Jan 20 2019 Ernestas Kulik <ekulik@redhat.com> - 20181203-1
 - Update to 20181203
 
