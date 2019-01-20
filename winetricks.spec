@@ -4,7 +4,7 @@
 
 Name:           winetricks
 Version:        20180603
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 Summary:        Work around common problems in Wine
 
@@ -27,10 +27,10 @@ ExcludeArch:    ppc64 ppc64le
 BuildRequires:  wine-common
 BuildRequires:  desktop-file-utils
 
-# runtime dependencies
 Requires:       wine-common
 Requires:       cabextract gzip unzip wget which
 Requires:       hicolor-icon-theme
+Requires:       (kdialog if kdialog else zenity)
 
 %description
 Winetricks is an easy way to work around common problems in Wine.
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Sun Jan 20 2019 Ernestas Kulik <ekulik@redhat.com> - 20180603-2
+- Add dependency on zenity or kdialog for GUI
+
 * Sat Jun 23 2018 Raphael Groner <projects.rg@smart.ms> - 20180603-1
 - new version
 
