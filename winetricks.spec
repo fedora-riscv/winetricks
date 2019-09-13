@@ -3,7 +3,7 @@
 %global commit0  43314ed7895396bfd625824d88b5e19c25f46cac
 
 Name:           winetricks
-Version:        20190615
+Version:        20190912
 Release:        1%{?dist}
 
 Summary:        Work around common problems in Wine
