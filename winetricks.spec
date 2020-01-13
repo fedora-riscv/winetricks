@@ -3,7 +3,7 @@
 %global commit0  43314ed7895396bfd625824d88b5e19c25f46cac
 
 Name:           winetricks
-Version:        20190912
+Version:        20191224
 Release:        1%{?dist}
 
 Summary:        Work around common problems in Wine
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Mon Jan 13 2020 - Ernestas Kulik <ekulik@redhat.com> - 20191224-1
+- Update to 20191224
+
 * Fri Sep 13 2019 - Ernestas Kulik <ekulik@redhat.com> - 20190912-1
 - Update to 20190912
 
