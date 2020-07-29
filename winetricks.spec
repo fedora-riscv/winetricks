@@ -4,7 +4,7 @@
 
 Name:           winetricks
 Version:        20200412
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 Summary:        Work around common problems in Wine
 
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 20200412-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Sat Jun 20 2020 - Ernestas Kulik <ekulik@redhat.com> - 20200412-1
 - Update to 20200412
 
