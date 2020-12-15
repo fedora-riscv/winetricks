@@ -3,8 +3,8 @@
 %global commit0  43314ed7895396bfd625824d88b5e19c25f46cac
 
 Name:           winetricks
-Version:        20200412
-Release:        2%{?dist}
+Version:        20201206
+Release:        1%{?dist}
 
 Summary:        Work around common problems in Wine
 
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Wed Nov 04 2020 Frantisek Zatloukal <fzatlouk@redhat.com> - 20201206-1
+- Update to 20201206
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 20200412-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
