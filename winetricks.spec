@@ -3,7 +3,7 @@
 %global commit0  43314ed7895396bfd625824d88b5e19c25f46cac
 
 Name:           winetricks
-Version:        20201206
+Version:        20210206
 Release:        1%{?dist}
 
 Summary:        Work around common problems in Wine
@@ -24,7 +24,7 @@ ExclusiveArch:  %{ix86} x86_64 %{arm} aarch64
 # - explicitly not ppc64* to hopefully not confuse koschei
 ExcludeArch:    ppc64 ppc64le
 
-BuildRequires:  wine-common
+BuildRequires: make
 BuildRequires:  desktop-file-utils
 
 Requires:       wine-common
@@ -73,6 +73,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Mon Feb 08 2021 Frantisek Zatloukal <fzatlouk@redhat.com> - 20210206-1
+- Update to 20210206
+- Drop BR on wine-common
+
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 20201206-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Wed Nov 04 2020 Frantisek Zatloukal <fzatlouk@redhat.com> - 20201206-1
 - Update to 20201206
 
